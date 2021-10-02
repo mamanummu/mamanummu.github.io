@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Kalam&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="cincin2.png"/>
+    <title>Maman & Ummu</title>
+    <style>
+        .overlay {
+            height: 100%;
+            width: 100%;
+            position: fixed; /* Stay in place */
+            z-index: 111; /* Sit on top */
+            left: 0;
+            top: 0;
+            background-color: white; /* Black fallback color */
+            background-color: rgba(255,255,255, 0.8); /* Black w/opacity */
+            overflow-x: hidden !important; /* Disable horizontal scroll */
+            transition: 0.8s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+        }
+        .overlay-content {
+            position: relative;
+            top: 10%; /* 25% from the top */
+            width: 100%; /* 100% width */
+            text-align: center; /* Centered text/links */
+            overflow-x: hidden  !important; /* Disable horizontal scroll */
+            margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+        }
+        @font-face {
+            font-family: alyeah;
+            src: url(alyeah.otf);
+        }
+        @font-face {
+            font-family: variane;
+            src: url(variane.ttf);
+        }
+        .judul {
+            color: #9F7945;
+            text-align: center;
+            font-family: alyeah;
+            font-size: 48px;
+            font-weight: 400;
+        }
+        .dan {
+            opacity: 0.4;
+            font-weight: normal;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        ::-webkit-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            display: none;
+            scrollbar-width: none;  /* Firefox */
+        }
+        .undangan {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 2px;
+        }
+        .card {
+            border: 5px solid #9F7945;
+        }
+        .kekuasaan {
+            color: #9F7945;
+            line-height: 18px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        
+        @media screen and (min-width: 1001px) {
+            .bunga-1 {
+                width: 300px;
+                margin-top: -420px;
+            }
+            .bunga-2 {
+                width: 300px;
+                margin-top: -391px;
+            }
+            .marginn {
+                margin-right: 130px;
+            }
+            .marginl {
+                margin-left: 130px;
+            }
+        }
+        
+        @media screen and (max-width: 1000px) {
+            .bunga-1 {
+                width: 150px;
+                margin-top: -225px;
+            }
+            .bunga-2 {
+                width: 150px;
+                margin-top: -196px;
+            }
+            .marginn {
+                margin-right: 0px;
+            }
+            .marginl {
+                margin-left: 0px;
+            }
+        }
+        body, html {
+            overflow-x: hidden !important;
+        }
+        .bunga-1 {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            margin-left: -15px;
+        }
+        .bunga-2 {
+            float: right;
+            position: relative;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            margin-right: -15px;
+        }
+        .nama-1 {
+            font-family: variane;
+            color: #9F7945;
+            font-size: 48px;
+            letter-spacing: 1px;
+            line-height: 50px;
+        }
+        .nama-2 {
+            font-family: variane;
+            color: #9F7945;
+            font-size: 40px;
+            letter-spacing: 1px;
+            line-height: 50px;
+        }
+        .desc-1 {
+            font-size: 12px;
+            letter-spacing: 0.7px;
+        }
+        .dann {
+            font-size: 40px;
+            font-family: alyeah;
+        }
+        .kotak {
+            background-color: #ffffcc88;
+            color: #9F7945;
+            border-radius: 12px;
+        }
+        .kotak .judulkotak {
+            font-family: 'Bad Script', cursive;
+        }
+        .lokasi {
+            font-family: 'Bad Script', cursive;
+            font-size: 30px;
+            color: #9F7945;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #9F7945;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            letter-spacing: 2px;
+        }
+        .coklat {
+            margin-top: 12px;
+            background-color: #ffffcc;
+            color: #9F7945;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div id="myNav" class="overlay">
+        
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <div class="mx-auto px-4" style="width: 300px;">
+                <img src="cincin2.png" style="max-width: 100px;" class="w-50 mb-3" alt="">
+                <h3>Dear, <span id="nama" class="font-weight-bold">Bpk/Ibu</span></h3>
+                <div class="mt-3">
+                    Tanpa mengurangi rasa hormat, kami memberikan kabar bahagia ini dan memohon restu dari rekan sekalian untuk senantiasa mendoakan kelancaran acara pernikahan kami.
+                </div>
+                <button class="mt-5 btn btn-success" onclick=closeNav()>Lihat Undangan</button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="container-fluid" style="padding-top: 40px; background-color: #ffffcc; padding-bottom: 60px;">
+        <div class="row mb-4">
+            <div class="col-12 col-md-6 order-md-2 text-center">
+                <div class="marginn" data-aos-delay="1000" data-aos="fade-left" data-aos-duration="2000">
+                    <div class="d-md-block d-none" style="height: 150px;"></div>
+                    <div class="undangan mb-4">UNDANGAN PERNIKAHAN</div>
+                    <div class="judul">Maman<span class="dan">&</span><br>Ummu</div>
+                    <div class="undangan mb-3">13 Oktober 2021</div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-1 text-center">
+                <div class="d-md-block d-none" style="height: 20px;"></div>
+                <img data-aos="fade-right" data-aos-duration="2000" class="marginl" src="foto.png" alt="" style="width: 100%; max-width: 600px;">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <img src="bunga1.png" class="bunga-1" alt="">
+                <img src="bunga2.png" class="bunga-2" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row pt-4">
+            <div class="col text-center">
+                <div class="" data-aos="zoom-in">
+                    <p class="kekuasaan">Dan, diantara tanda-tanda kekuasaan-Nya ialah Dia menciptkan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya, pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir</p>
+                    <p class="kekuasaan font-weight-bold">(Q.S. Ar-Ruum : 21)</p>
+                </div>
+                <img src="divider.png" alt="" class="w-50 my-4">
+                <div class="" data-aos="zoom-in-down" data-aos-duration="1400">
+                    <div class="nama-1 mt-4">Abdul Rahman Rahim</div>
+                    <div class="desc-1">Anak ke 3 dari Bpk. Abdul Rachim, SE & Ibu. Rahmawati Dg. Te'ne</div>
+                </div>
+                <div class="dann mt-4 mb-4">
+                    <img src="cincin2.png" class="w-100" style="max-width: 80px;" alt="">
+                </div>
+                <div class="" data-aos="zoom-in-up" data-aos-duration="1400">
+                    <div class="nama-2 mt-2">Ummu Chumairah Syafarullah, A.Md. Keb</div>
+                    <div class="desc-1">Anak ke 2 dari Bpk. Syafarullah Abbas Tuppu, SE, MM Dg. Tappa & Ibu. St. Hawa Nur</div>
+                </div>
+                <br><br>
+                <div class="row mt-5">
+                    <div class="col-12 col-md-6 mb-4 mb-md-0 " data-aos="fade-up" data-aos-duration="1500">
+                        <div class="kotak p-4">
+                            <div class="h3 font-weight-bold judulkotak">Akad Nikah</div>
+                            <hr class="w-100">
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <i class="h4 fa-solid fa-calendar-week"></i>
+                                    <div class="">Selasa</div>
+                                    <div class="font-weight-bold">12 Oktober 2021</div>
+                                </div>
+                                <div class="col">
+                                    <i class="h4 fa-solid fa-clock"></i>
+                                    <div class="">Pukul</div>
+                                    <div class="font-weight-bold">10.00 WITA - Selesai</div>
+                                </div>
+                            </div>
+                            <div class="mt-4">Di <b>Gedung Graha Nur Tasnim</b> <br> Jl. Letjen Hertasning No. 84, Makassar</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 " data-aos="fade-up" data-aos-duration="1500">
+                        <div class="kotak p-4">
+                            <div class="h3 font-weight-bold judulkotak">Resepsi</div>
+                            <hr class="w-100">
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <i class="h4 fa-solid fa-calendar-week"></i>
+                                    <div class="">Rabu</div>
+                                    <div class="font-weight-bold">13 Oktober 2021</div>
+                                </div>
+                                <div class="col">
+                                    <i class="h4 fa-solid fa-clock"></i>
+                                    <div class="">Pukul</div>
+                                    <div class="font-weight-bold">19.00 WITA - Selesai</div>
+                                </div>
+                            </div>
+                            <div class="mt-4">Di <b>Gedung Haji Bate</b> <br> Jl. Tumanurung Raya Kab. Gowa</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <div class="lokasi mb-2">Lokasi Resepsi</div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d910.4035745997763!2d119.45089221752622!3d-5.199033445140879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee239b424e11f%3A0x5690830ea7e9c6db!2sHaji%20Bate%20Building!5e0!3m2!1sen!2sid!4v1633173170358!5m2!1sen!2sid" width="100%" height="450" style="border:0; max-width: 600px;" allowfullscreen="" loading="lazy"></iframe>
+                <br>
+                <a href="https://goo.gl/maps/HxUZBKtNTiVkZLxJ9" class="mt-3" target="_blank">
+                    <button class="btn coklat">Buka Google Maps</button>
+                </a>
+            </div>
+
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <img src="prokes.png" alt="" style="max-width: 600px; width: 100%;">
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <audio src="lagu.mp3"></audio>
+    <footer class="footer text-center p-4">
+        Maman ❤ Ummu. 2021
+    </footer>
+    
+    
+    
+    <!-- <iframe src="lagu.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+    </iframe>
+    <audio autoplay loop  id="playAudio">
+        <source src="lagu.mp3">
+    </audio> -->
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js" integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        
+        var url_string = window.location.href; //window.location.href
+        var url = new URL(url_string);
+        var c = url.searchParams.get("to");
+        if (c) {
+            $("#nama").text(c);
+        }
+        
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+            const audio = document.querySelector("audio");
+            audio.volume = 1;
+            audio.play();
+        }
+    </script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
